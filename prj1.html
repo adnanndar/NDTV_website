@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NDTV</title>
+    <style>
+        /* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    min-height: 80px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 12px 45px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* LOGO */
+
+.Logo {
+    margin-right: 50px;
+}
+
+.Logo img {
+    width: 105px;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #222;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: 0.3s;
+}
+
+
+/* RED LINE UNDER NAV LINKS */
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #e00000;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e00000;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* MORE DROPDOWN */
+
+#more {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 7px 10px;
+    transition: 0.3s;
+}
+
+#more:hover {
+    border-color: #e00000;
+    color: #e00000;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto 60px;
+}
+
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+main > span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: white;
+    padding: 18px 22px;
+    border-left: 5px solid #e00000;
+    border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    margin-bottom: 25px;
+}
+
+main > span:first-child h2 {
+    font-size: 22px;
+    color: #222;
+    margin-right: 10px;
+}
+
+main > span:first-child a {
+    text-decoration: none;
+    color: #d00000;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+main > span:first-child a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   ASK NDTV
+========================= */
+
+main > span:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+main > span:nth-child(2) label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+#ndtv {
+    width: 260px;
+    height: 40px;
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+    transition: 0.3s;
+}
+
+#ndtv:focus {
+    border-color: #e00000;
+    box-shadow: 0 0 0 3px rgba(224, 0, 0, 0.08);
+}
+
+#ndtv::placeholder {
+    color: #999;
+}
+
+
+/* =========================
+   NEWS IMAGE CARDS
+========================= */
+
+main > span:nth-of-type(3),
+main > span:nth-of-type(4),
+main > span:nth-of-type(5) {
+    display: inline-block;
+    width: 32%;
+    margin-right: 1.5%;
+    margin-top: 15px;
+    vertical-align: top;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+main > span:nth-of-type(5) {
+    margin-right: 0;
+}
+
+
+/* CARD HOVER */
+
+main > span:nth-of-type(3):hover,
+main > span:nth-of-type(4):hover,
+main > span:nth-of-type(5):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* IMAGES */
+
+main > span:nth-of-type(3) img,
+main > span:nth-of-type(4) img,
+main > span:nth-of-type(5) img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+main > span:nth-of-type(3):hover img,
+main > span:nth-of-type(4):hover img,
+main > span:nth-of-type(5):hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   EMPTY NEWS LINKS
+========================= */
+
+main > span:nth-of-type(6),
+main > span:nth-of-type(7),
+main > span:nth-of-type(8),
+main > span:nth-of-type(9) {
+    display: inline-block;
+    width: 48%;
+    min-height: 50px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #181818, #292929);
+    color: white;
+    padding: 45px 55px 30px;
+    margin-top: 40px;
+}
+
+
+/* RED TOP LINE */
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e00000;
+}
+
+
+/* NDTV */
+
+footer h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+
+/* FOLLOW US */
+
+footer h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+footer > span:first-of-type {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+footer > span:first-of-type a {
+    width: 38px;
+    height: 38px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+footer > span:first-of-type a:hover {
+    background: #e00000;
+    transform: translateY(-4px);
+}
+
+footer > span:first-of-type img {
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* =========================
+   FOOTER LINKS
+========================= */
+
+footer > span:last-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    padding-top: 22px;
+    padding-right: 350px;
+    border-top: 1px solid #444;
+}
+
+footer > span:last-of-type a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+footer > span:last-of-type a:hover {
+    color: white;
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+footer > p {
+    position: absolute;
+    right: 55px;
+    bottom: 30px;
+    color: #888;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    header {
+        padding: 15px 25px;
+    }
+
+    .Logo {
+        margin-right: 30px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    footer {
+        padding: 40px 30px 30px;
+    }
+
+    footer > span:last-of-type {
+        padding-right: 0;
+    }
+
+    footer > p {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .Logo {
+        margin-right: 0;
+    }
+
+    nav {
+        width: 100%;
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    /* MAIN */
+
+    main {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+
+    /* QUICK LINKS */
+
+    main > span:first-child {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    main > span:first-child h2 {
+        width: 100%;
+        font-size: 20px;
+    }
+
+
+    /* ASK NDTV */
+
+    main > span:nth-child(2) {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    #ndtv {
+        width: 100%;
+    }
+
+
+    /* NEWS CARDS */
+
+    main > span:nth-of-type(3),
+    main > span:nth-of-type(4),
+    main > span:nth-of-type(5) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    main > span:nth-of-type(3) img,
+    main > span:nth-of-type(4) img,
+    main > span:nth-of-type(5) img {
+        height: auto;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 35px 25px 25px;
+    }
+
+    footer h1 {
+        font-size: 30px;
+    }
+
+    footer > span:last-of-type {
+        gap: 14px;
+        padding-right: 0;
+    }
+
+    footer > p {
+        position: static;
+        margin-top: 20px;
+        white-space: normal;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="Logo">
+            <img src="images.png" alt="">
+        </div>
+        <nav>
+
+            <a href="https://www.ndtv.com/livetv-ndtv24x7" target="_blank">Live Tv</a>
+            <a href="https://www.ndtv.com/latest?pfrom=home-ndtv_mainnavigation" target="_blank">Latest</a>
+            <a href="https://www.ndtv.com/india?pfrom=home-ndtv_mainnavigation" target="_blank">India</a>
+            <a href="https://www.ndtv.com/world?pfrom=home-ndtv_mainnavigation" target="_blank">World</a>
+            <a href="https://www.ndtv.com/video?pfrom=home-ndtv_mainnavigation" target="_blank">Videos</a>
+            <a href="https://www.ndtv.com/opinion?pfrom=home-ndtv_mainnavigation" target="_blank">Opinion</a>
+            <a href="https://www.ndtv.com/cities?pfrom=home-ndtv_mainnavigation" target="_blank">Cities</a>
+            <a href="https://www.ndtv.com/education?pfrom=home-ndtv_mainnavigation" target="_blank">Education</a>
+
+            <label for="more"></label>
+            <select id="more">
+                <option value="More" disabled selected></option>
+                <option value="Health">Health</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Podccast">Podccast</option>
+                <option value="Travel">Travel</option>
+                <option value="Cricket">Cricket</option>
+                <option value="Weather">Weather</option>
+            </select>
+
+        </nav>
+    </header>
+
+
+    <main>
+        <span>
+            <h2>Quick Links</h2>
+            <a href="https://www.ndtv.com/topic/iran-war">Iran War</a>
+            <a href="https://www.ndtv.com/search?searchtext=Nepal-flood">Nepal Flash Flood</a>
+        </span>
+        <span>
+            <label for="ndtv">Ask NDTV</label>
+            <input id="ndtv" type="text" placeholder="What's on yout mind!?">
+        </span>
+        <br>
+        <span>
+            <a href="https://www.ndtv.com/india-news/no-benefits-for-india-from-brics-says-p-chidambaram-bjp-asks-what-did-congress-do-12026475?pfrom=home-ndtv_topscroll"
+                target="_blank">
+                <img src="https://c.ndtvimg.com/2026-09/gomnquts_brics_625x300_10_September_26.jpg?downsize=600:337"
+                    alt="">
+            </a>
+        </span>
+
+        <span>
+            <a href="https://www.ndtv.com/world-news/several-us-war-planes-damaged-in-iranian-strike-on-jordan-report-12026179?pfrom=home-ndtv_topscroll_Imagetopscroll"
+                target="_blank">
+                <img src="https://c.ndtvimg.com/2026-09/kvjlcf44_jordan-base_625x300_10_September_26.jpeg?downsize=338:190"
+                    alt="">
+            </a>
+        </span>
+
+        <span>
+            <a href="https://www.ndtv.com/india-news/completely-freed-mayawati-sacks-nephew-akash-anand-from-bsp-after-father-in-law-ashok-siddharth-retires-12026724?pfrom=home-ndtv_topscroll"
+                target="_blank">
+                <img src="https://c.ndtvimg.com/2026-09/2nf090a_akash-anand-31-was-once-the-declared-successor-of-mayawati-his-paternal-aunt_625x300_03_September_26.png?downsize=338:190"
+                    alt="">
+            </a>
+        </span>
+
+        <span>
+            <a href="https://www.ndtv.com/world-news/india-to-pitch-rbi-backed-cross-border-digital-currencies-for-brics-payments-report-12026672?pfrom=home-ndtv_topscroll"
+                target="_blank"></a>
+        </span>
+
+        <span>
+            <a href="https://www.gadgets360.com/mobiles/news/iphone-duo-foldable-price-specs-release-date-12024951?pfrom=home-ndtv_topscroll"
+                target="_blank"></a>
+        </span>
+
+        <span>
+            <a href="https://www.ndtv.com/india-news/gloves-off-over-vijays-jaw-gesture-mk-stalin-hits-back-pulls-no-punches-12026257?pfrom=home-ndtv_topscroll"
+                target="_blank"></a>
+        </span>
+
+        <span>
+            <a href="https://www.ndtv.com/india-news/ndtv-news-app-featured-at-iphone-launch-event-12026117?pfrom=home-ndtv_topscroll"
+                target="_blank"></a>
+        </span>
+
+    </main>
+
+    <footer>
+        <div>
+            <h1>NDTV</h1>
+        </div>
+        <p> Copyright &copy; | All rights reserved</p>
+        <div>
+            <h3>Follow us on</h3>
+        </div>
+        <span>
+            <a href="https://www.x.com" target="_blank"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAZlBMVEUAAAD///8VFRWQkJCTk5P4+PheXl5TU1P7+/u4uLje3t5lZWVOTk7R0dHz8/Pp6emioqLExMQ4ODghISHLy8tDQ0MyMjKGhoabm5t/f389PT1JSUlZWVkbGxuurq5ycnIrKysMDAx+wAvGAAAFEElEQVR4nO2b63aqMBCFrbeqVbCi1lstff+XPJfskMiA7CFAz1kr+yeLyFcmzOxM0tF49A8qQrGKUKwiFKsIxSpCsYpQrCIUqwjFKkKxilCsIhSrCMUqQrGKUKwiFKsmqHw7rdTpqHzQ2QxbdwE13rxUa6Nj+jCjVlkXUKNLUkM10TDNzZj0m7q7eU6da6BmV57plv4dkly424mJ/l5DtaKZMsM0m5P3E1B5ilfjZC6c2GdgXp7J+6mU8GV+8359hdZLc+XGPWOv+xvIPHU3v3ooLmQrRQC3+JtoJg7q0wRw9VlcufEPmppb9zwTmdElA/78t8ahb+bGjSbZkmVmW55EYxPAtCkZrk2aS3YKJrr2gSEvLhwM5vL5sMwwzchPQgk1X5QZ8PK+no363BA3tYey89X7+U1zYJAMVBVJA2UD6Cbs1by89/ohJ3Uy0EIdkvKnjcr/UTeiRTLQQo0mIoAmOnVlFsmg8QMNgrIMzqfh26q2Vm+mQiZqJB3UVTB81E9k6wya02sYlK3MU3dlWZeGUB2JlB8KZQPo7N0RVVHcCRO2bcOkhMoFw1v1w5chTNolFhg8a4QAPprKSdtk0AoKDAs3VT5X8iPD3Nu0XVRqx+VI7O7KXERqbVJ9qnIGIVCjtSgd5cq8S8r5rHco641dALEusAEMSgZtoWBHUueNH60VkkFtRewFanR5YPgjuIG/S6i7CO8gUJbBVeZvk1RnWeEMnviZnqCsvcuLC7lFwRqfXzx3B7UT9g7Z8m6cQartE3UBZd2Btw73Gw7JaxhT206esHdjD0q5TOgMKjNx8qyV6xiFJIMgKMsgrFVrZ9AFVIW9M9WFayD2BJUJa/X182+qgoFuevQHZa2VF0DRMRoeyjZe3E/cZuWqODiU9cZtulb9QcnKjKr4M2XGDhbeuJsAhm0YrWflytzU9BgAqjaASVAKDd1aQ1ssLy5cnjU9BoJaC2t1Dg9gKJTdefMqs7FWi0P9oJ6hrDV4eXE/dAwOYBjU1jk7b40eXJmDoB62AqW1UmwIdgeFLsIK/ty1DrLAyhwAhY9/toO92zgG2fQYCApNvMX89yRalBmwTtbtfoRDjZE2/bW6t7TChmA+LBQmM3p6mESuuNzEXs4AUEgG9qFz4Q5QFQfoDhdCMnAJUjLA1rRp57WD+jIvZuWNFgzS1vQLZRuIfnl7FQxyL6dPqB12OB4/+In3NRrBG+sTexsoNDXL5gS967y4cGhbmVtAoaqIXaJDWmaQDYe+oErJwNNZBHAv514vUHjye9WhI/MOZ66BXruf1C0UMnVSaQCkP5ebcT1AoV1dt9qUe1piK6B7qCM+vNqmJvy5azvKzbjOoQzToj4fZqLp8Wr+DFWzXwX16AwqNRe3IIDsKTMt1L02GXgSjRfs5VR/GsFQaBPsn59AHGMSuR8+qAPIQ+HrTpvuW4v36e8ndQuFQwlEeRUB/NY2PVgou0xgtjvFftIRVaBrKCQDKgRX4c+nugCSULrtTmmtUBVJb8xBabc7Ye+8M5jGl5IHFSioiXJOWL+8v82hG2Y/d+aMgUKZXelzmjjZy20FEg/CskS3WAo6Bd0MdUEy0Pl/LC6kmBPEjVDjdqcibQEQWhBNjyYoe1JT31dd1lB5B1jbQh1Pk9+a8nWrUDap1qn5+P5/+S8qP6IIxSpCsYpQrCIUqwjFKkKxilCsIhSrCMUqQrGKUKwiFKsIxSpCscrG/55+AUgjMVXsJLKTAAAAAElFTkSuQmCC"
+                    width="25"></a>
+            <a href="https://www.youtube.com" target="_blank"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAdVBMVEX/////AAD/fX3/sbH/+fn/8vL//Pz/19f/uLj/0tL/zc3/yMj/xMT/wMD/u7v/pKT/j4//bm7/Q0P/6+v/3t7/UFD/Y2P/qqr/m5v/hYX/MjL/Pz//eXn/aGj/5eX/dHT/Dg7/Ghr/Kir/Skr/Vlb/IiL/lZVxZpnFAAADJUlEQVR4nO2a25aaQBBFae43EQQEvKA4Ov//iQGT0UnGJKe6peLKqv00D06vLTTVx6IsSxAEQRAEQRAEQRAEQRCE/w/fHfEmyr6vgihO0kUWhqFzZfwjW6RJHAVV35fXj02f92cQKYM0dJpm2eadXazr1WZQMMNmVa+LXZe3y6ZxwjQojXV8L87rLUXi75LbOo89g2u32D3P5md2C02laDOX0sQm1nGy51SasMlK3n5uJ6X2HlFqPb+TUmua05LDSaklxam/8EhdeoLUgcdJqQPu5HI5KeXCUkw7agLfVWx3j3D/+hOf1And6gGfk1IBKNVwSjWgVMcphZ6Ab5xSb6DUwCk1gFJHTqkj5uTySmE13eN0UgoLVT1hxfXZWAqrnhVhxc7KtoZSFSQVEVYcq4zXDkZSESQV06TGS2v0SyyBpBZUqfF71PpSGSTl0KXGCDboSjmQFCXi3U8u19bUwmJeqyU1Jh698tBCUrmmlGWlOj/085mlLE8j3c8uZVklOd9jUpSM9yCiJSuaVMchNcZp0tbCpCg9oMdhtjT+Xr/iU3bF71as8K7NAWk1usUzvqafDeASBZLyniM10mIJFpOi9PD+JJUP0BJ7PikXPtb5pAjnIJdURXmAmaRaUtcGkzJ8+jJiVGAoCT3lv3Epk4pevlOVwIquf/b5oU7Iw3pBulKRXgsJk9I74r1Csy+CRRed5OmCB90DZovDKTFt0qUoT9BVKiCXgc+8Q1KU5vAoVeZmTTasPRwSVuwsx/RNQAhJUbouZ4PN9APsXTKlafYEsKbZSzZiX7JlbZnvEwIrUMqo7FApQCnGF6P4q9GUUyoFpVhrAlYRxoPDtF9PYAvPU802ofSVHer0miMAjMMShMEglpmgCcpcUMV00hzRZ+8KJRIbgEXhG+YvFwHONKfXHH9juIPEe/ed/jzjdj+eSXv8E0E+U7Ra5ejczSO8PrPr7ebypGt2vGy2tZ319M30lTJIMqdp2o+J5hPseDxN88x2l7dt0zhZ8oR55kf4/n32+2P0O7uPfme30e/b5Lc/x+S3IAiCIAiCIAiCIAiCIAj/nG83yD2mMrd4iAAAAABJRU5ErkJggg=="
+                    width="25"></a>
+            <a href="https://www.instagram.com" target="_blank"><img
+                    src="data:image/jpeg;base64,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"
+                    width="25"></a>
+            <a href="https://www.facebook.com" target="_blank"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4lyiDe9X395obsB7Z3X89mtkBpOLX8izIWtcdyqmHZg&s=10"
+                    width="25"></a>
+            <a href="https://www.linkedin.com" target="_blank"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj20qxqvfqHLQWCcrPSIoAug0uctmwbADLJLi8TNUujA&s=10"
+                    width="25"></a>
+            <a href="https://www.threads.com" target="_blank"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZM0XCADfGPGJ4x-J0Rw4PQkxlFRUJaKDuyGovn42GHw&s=10"
+                    width="25"></a>
+        </span>
+
+        <span>
+            <a href="https://www.ndtv.com/convergence/ndtv/corporatepage/index.aspx?pfrom=home-ndtv_footer"
+                target="_blank">About
+                US</a>
+            <a href="https://www.ndtv.com/convergence/ndtv/advertise/ndtv_leaderboard.aspx?pfrom=home-ndtv_footer"
+                target="_blank">Advertise</a>
+            <a href="https://www.ndtv.com/convergence/ndtv/new/dth-rio-agreement3.aspx" target="_blank">Channels</a>
+            <a href="https://www.ndtv.com/convergence/ndtv/new/disclaimer.aspx?pfrom=home-ndtv_footer"
+                target="_blank">Disclaimer</a>
+            <a href="https://www.ndtv.com/convergence/ndtv/new/feedback.aspx?pfrom=home-ndtv_footer"
+                target="_blank">Feedback</a>
+            <a href="https://www.ndtv.com/convergence/ndtv/new/privacy_policy.aspx?pfrom=home-ndtv_footer"
+                target="_blank">Privacy Policy</a>
+            <a href="https://www.ndtv.com/convergence/ndtv/new/TermsAndConditions.aspx?pfrom=home-ndtv_footer"
+                target="_blank">Terms and Conditions</a>
+            <a href="https://www.ndtv.com/?pfrom=home-ndtv_footer" target="_blank">News</a> 
+        </span> 
+ 
+ 
+    </footer> 
+
+ 
+</body> 
+ 
+</html> 
