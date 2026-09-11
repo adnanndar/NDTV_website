@@ -1,0 +1,530 @@
+   /* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    min-height: 80px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 12px 45px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* LOGO */
+
+.Logo {
+    margin-right: 50px;
+}
+
+.Logo img {
+    width: 105px;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #222;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: 0.3s;
+}
+
+
+/* RED LINE UNDER NAV LINKS */
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #e00000;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e00000;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* MORE DROPDOWN */
+
+#more {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 7px 10px;
+    transition: 0.3s;
+}
+
+#more:hover {
+    border-color: #e00000;
+    color: #e00000;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto 60px;
+}
+
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+main > span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: white;
+    padding: 18px 22px;
+    border-left: 5px solid #e00000;
+    border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    margin-bottom: 25px;
+}
+
+main > span:first-child h2 {
+    font-size: 22px;
+    color: #222;
+    margin-right: 10px;
+}
+
+main > span:first-child a {
+    text-decoration: none;
+    color: #d00000;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+main > span:first-child a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   ASK NDTV
+========================= */
+
+main > span:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+main > span:nth-child(2) label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+#ndtv {
+    width: 260px;
+    height: 40px;
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+    transition: 0.3s;
+}
+
+#ndtv:focus {
+    border-color: #e00000;
+    box-shadow: 0 0 0 3px rgba(224, 0, 0, 0.08);
+}
+
+#ndtv::placeholder {
+    color: #999;
+}
+
+
+/* =========================
+   NEWS IMAGE CARDS
+========================= */
+
+main > span:nth-of-type(3),
+main > span:nth-of-type(4),
+main > span:nth-of-type(5) {
+    display: inline-block;
+    width: 32%;
+    margin-right: 1.5%;
+    margin-top: 15px;
+    vertical-align: top;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+main > span:nth-of-type(5) {
+    margin-right: 0;
+}
+
+
+/* CARD HOVER */
+
+main > span:nth-of-type(3):hover,
+main > span:nth-of-type(4):hover,
+main > span:nth-of-type(5):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* IMAGES */
+
+main > span:nth-of-type(3) img,
+main > span:nth-of-type(4) img,
+main > span:nth-of-type(5) img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+main > span:nth-of-type(3):hover img,
+main > span:nth-of-type(4):hover img,
+main > span:nth-of-type(5):hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   EMPTY NEWS LINKS
+========================= */
+
+main > span:nth-of-type(6),
+main > span:nth-of-type(7),
+main > span:nth-of-type(8),
+main > span:nth-of-type(9) {
+    display: inline-block;
+    width: 48%;
+    min-height: 50px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #181818, #292929);
+    color: white;
+    padding: 45px 55px 30px;
+    margin-top: 40px;
+}
+
+
+/* RED TOP LINE */
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e00000;
+}
+
+
+/* NDTV */
+
+footer h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+
+/* FOLLOW US */
+
+footer h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+footer > span:first-of-type {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+footer > span:first-of-type a {
+    width: 38px;
+    height: 38px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+footer > span:first-of-type a:hover {
+    background: #e00000;
+    transform: translateY(-4px);
+}
+
+footer > span:first-of-type img {
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* =========================
+   FOOTER LINKS
+========================= */
+
+footer > span:last-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    padding-top: 22px;
+    padding-right: 350px;
+    border-top: 1px solid #444;
+}
+
+footer > span:last-of-type a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+footer > span:last-of-type a:hover {
+    color: white;
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+footer > p {
+    position: absolute;
+    right: 55px;
+    bottom: 30px;
+    color: #888;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    header {
+        padding: 15px 25px;
+    }
+
+    .Logo {
+        margin-right: 30px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    footer {
+        padding: 40px 30px 30px;
+    }
+
+    footer > span:last-of-type {
+        padding-right: 0;
+    }
+
+    footer > p {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .Logo {
+        margin-right: 0;
+    }
+
+    nav {
+        width: 100%;
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    /* MAIN */
+
+    main {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+
+    /* QUICK LINKS */
+
+    main > span:first-child {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    main > span:first-child h2 {
+        width: 100%;
+        font-size: 20px;
+    }
+
+
+    /* ASK NDTV */
+
+    main > span:nth-child(2) {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    #ndtv {
+        width: 100%;
+    }
+
+
+    /* NEWS CARDS */
+
+    main > span:nth-of-type(3),
+    main > span:nth-of-type(4),
+    main > span:nth-of-type(5) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    main > span:nth-of-type(3) img,
+    main > span:nth-of-type(4) img,
+    main > span:nth-of-type(5) img {
+        height: auto;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 35px 25px 25px;
+    }
+
+    footer h1 {
+        font-size: 30px;
+    }
+
+    footer > span:last-of-type {
+        gap: 14px;
+        padding-right: 0;
+    }
+
+    footer > p {
+        position: static;
+        margin-top: 20px;
+        white-space: normal;
+    }
+}
