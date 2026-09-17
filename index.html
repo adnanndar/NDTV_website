@@ -5,14 +5,15 @@
     <title>NDTV</title>
 
     <link rel="stylesheet" href="style1.css">
-    <link rel="stylesheet" href="script.js">
+
 </head>
 
 <body>
 
     <header>
         <div class="Logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNiBCaDRtBEYipjgaXD9wp_um-_rJ3-J7wo7_7wXX2zw&s=10" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNiBCaDRtBEYipjgaXD9wp_um-_rJ3-J7wo7_7wXX2zw&s=10"
+                alt="">
         </div>
         <nav>
 
@@ -24,7 +25,7 @@
             <a href="https://www.ndtv.com/opinion?pfrom=home-ndtv_mainnavigation" target="_blank">Opinion</a>
             <a href="https://www.ndtv.com/cities?pfrom=home-ndtv_mainnavigation" target="_blank">Cities</a>
             <a href="https://www.ndtv.com/education?pfrom=home-ndtv_mainnavigation" target="_blank">Education</a>
-
+            <a href="http://127.0.0.1:5500/form.html" target="_blank">Contact Us!</a>
             <label for="more"></label>
             <select id="more">
                 <option value="More" disabled selected></option>
@@ -47,9 +48,19 @@
             <a href="https://www.ndtv.com/search?searchtext=Nepal-flood">Nepal Flash Flood</a>
         </span>
         <span>
+            <!-- <img class="ask" src="https://www.ndtv.com/estatic/static/news/images/AskNDTV_OG.png" alt=""> -->
             <label for="ndtv">Ask NDTV</label>
-            <input id="ndtv" type="text" placeholder="What's on yout mind!?">
+            <input id="ndtv" type="text" placeholder="What's on your mind!?">
+            <span id="boxright">
+                <form class="container">
+                    <label for="news" class="box"></label>
+                    <input id="news" class="box" placeholder="Enter your news!">
+                    <button class="box" type="submit">Submit</button>
+                </form>
+
+            </span>
         </span>
+
         <br>
         <span>
             <a href="https://www.ndtv.com/india-news/no-benefits-for-india-from-brics-says-p-chidambaram-bjp-asks-what-did-congress-do-12026475?pfrom=home-ndtv_topscroll"
@@ -141,13 +152,13 @@
                 target="_blank">Privacy Policy</a>
             <a href="https://www.ndtv.com/convergence/ndtv/new/TermsAndConditions.aspx?pfrom=home-ndtv_footer"
                 target="_blank">Terms and Conditions</a>
-            <a href="https://www.ndtv.com/?pfrom=home-ndtv_footer" target="_blank">News</a> 
-        </span> 
- 
- 
-    </footer> 
+            <a href="https://www.ndtv.com/?pfrom=home-ndtv_footer" target="_blank">News</a>
+        </span>
 
- 
-</body> 
- 
-</html> 
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
