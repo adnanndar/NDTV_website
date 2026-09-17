@@ -54,7 +54,7 @@
    nav {
        display: flex;
        align-items: center;
-       gap: 20px;
+       gap: 24px;
        flex-wrap: wrap;
    }
 
@@ -165,7 +165,7 @@
    main>span:nth-child(2) {
        display: flex;
        align-items: center;
-       justify-content: flex-start;
+       justify-content: flex-end;
        gap: 10px;
        margin-bottom: 20px;
    }
@@ -174,79 +174,12 @@
        font-size: 15px;
        font-weight: bold;
        color: #333;
-
-   }
-
-   #boxright {
-       display: flex;
-       flex-direction: row;
-       justify-content: flex-start;
-       width: 100%;
-   }
-   .box{
-    padding: 2px;
-    margin: 1px;
-   }
-   .box button{
-    align-items:center;
-    gap:5px;
-   }
-
-   #local {
-       display: flex;
-       align-items: center;
-       justify-content: flex-end;
-       gap: 10px;
-       margin-bottom: 10px;
-       margin-right: 215px;
-   }
-
-
-   form {
-       width: 300px;
-       height: 50px;
-       border: 1px solid #333;
-       margin-left: 500px;
-       border-radius: 7px;
-       padding: 10px 10px 10px 10px;
-       background: white;
-       font-size: 12px;
-   }
-
-   .container:hover {
-       border-color: tomato;
-       box-shadow: 2px 2px 3px rgb(157, 49, 30);
-   }
-
-   #news {
-       width: 80%;
-       height: 30px;
-       resize: none;
-   }
-
-   button {
-      display:inline-block;
-    padding: 5px 5px 5px 5px;
-       margin-top: 10px;
-       background-color: #007bff;
-       color: white;
-       border: none;
-       border-radius: 5px;
-       cursor: pointer;
-       position: absolute;
-       
-   }
-
-   .ask {
-       padding: 0px 0px 0px 0px;
-       margin: 0px 0px 0px 0px;
    }
 
    #ndtv {
-       width: 280px;
-       height: 50px;
-
-       padding: 5px;
+       width: 260px;
+       height: 40px;
+       padding: 8px 14px;
        border: 1px solid #ccc;
        border-radius: 5px;
        outline: none;
@@ -265,6 +198,8 @@
    }
 
 
+
+
    /* =========================
    NEWS IMAGE CARDS
 ========================= */
@@ -273,11 +208,11 @@
    main>span:nth-of-type(4),
    main>span:nth-of-type(5) {
        display: inline-block;
-       width: 30%;
+       width: 32%;
        margin-right: 1.5%;
        margin-top: 15px;
        vertical-align: top;
-       background: rgb(196, 193, 193);
+       background: white;
        border-radius: 8px;
        overflow: hidden;
        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -446,71 +381,107 @@
 
    footer>p {
        position: absolute;
+       text-align: center;
        right: 55px;
        bottom: 30px;
        color: #888;
        font-size: 12px;
-       white-space: nowrap;
+       white-space: nowrap
    }
 
-
-   /* =========================
-   RESPONSIVE - TABLET
-========================= */
-
-   @media (max-width: 1000px) {
-
-       header {
-           padding: 15px 25px;
+   @media (max-width: 700px) {
+       * {
+           padding: 0px;
+           margin: 0px;
        }
 
-       .Logo {
-           margin-right: 30px;
+       header {
+           width: 100%;
+           min-height: auto;
+           background: #6d2d2d;
+           display: flex;
+           align-items: flex-start;
+           flex-direction: column;
+           gap: 10px;
+           border-bottom: 1px solid #ff0000;
+           position: static;
+           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+       }
+
+       #more {
+           border: 1px solid #ddd;
+           border-radius: 5px;
+           outline: none;
+           background: #c1a3a3;
+           font-size: 5px;
+           width: 20px;
+           /* font-weight: 100; */
+           cursor: pointer;
+           padding: 0px;
+           transition: 0.3s;
        }
 
        nav {
-           gap: 15px;
+           display: flex;
+           align-items: center;
+           gap: 24px;
+           flex-wrap: wrap;
        }
 
        nav a {
+           position: relative;
+           text-decoration: none;
+           color: #ffffff;
+           font-size: 10px;
+           font-weight: 500;
+           padding: 2px 0;
+           transition: 0.3s;
+       }
+
+       .Logo img {
+           width: 80px;
+           height: 20px;
+           display: block;
+       }
+
+       main>span:first-child {
+           display: flex;
+           align-items: center;
+           gap: 10px;
+           background: #86b96a;
+           padding: 10px;
+           border-left: 5px solid #e00000;
+           border-radius: 6px;
+           box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+           margin-bottom: 25px;
+       }
+
+       main>span:first-child a {
+           text-decoration: none;
+           color: #d00000;
            font-size: 14px;
+           font-weight: bold;
+           transition: 0.2s;
+           padding: 4px;
+           font-size: 10px;
        }
 
-       main {
-           width: 94%;
+       main>span:nth-child(2) label {
+           font-size: 14px;
+           font-weight: bold;
+           color: #333;
        }
 
-       footer {
-           padding: 40px 30px 30px;
-       }
-
-       footer>span:last-of-type {
-           padding-right: 0;
-       }
-
-       footer>p {
-           position: static;
-           margin-top: 20px;
-       }
-   }
-
-
-   /* =========================
-   RESPONSIVE - MOBILE
-========================= */
-
-   @media (max-width: 700px) {
-
-       header {
-           position: static;
-           flex-direction: column;
-           align-items: flex-start;
-           gap: 18px;
-           padding: 20px;
-       }
-
-       .Logo {
-           margin-right: 0;
+       #ndtv {
+           width: 100%;
+           height: auto;
+           padding: 10px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           outline: none;
+           font-size: 10px;
+           background: #fbfbfb;
+           transition: 0.3s;
        }
 
        nav {
@@ -518,149 +489,82 @@
            gap: 12px 18px;
        }
 
-       nav a {
-           font-size: 13px;
-       }
-
-
-       /* MAIN */
-
-       main {
-           width: 94%;
-           margin-top: 25px;
-       }
-
-
-       /* QUICK LINKS */
-
        main>span:first-child {
-           flex-wrap: wrap;
+           display: block;
+           align-items: flex-start;
            gap: 15px;
-           padding: 15px;
+           background: #ead4d4;
+           padding: 10px 5px;
+           border-left: 5px solid #e00000;
+           border-radius: 6px;
+           box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+           margin-bottom: 25px;
        }
 
        main>span:first-child h2 {
-           width: 100%;
-           font-size: 20px;
+           font-size: 15px;
+           color: #222;
+           margin-right: 0px;
        }
 
-
-       /* ASK NDTV */
-
-       main>span:nth-child(2) {
-           justify-content: flex-start;
-           flex-wrap: wrap;
+       footer {
+           position: static;
+           width: 100%;
+           background: linear-gradient(135deg, #181818, #292929);
+           color: white;
+           padding: 25px;
+           margin-top: 40px;
        }
 
-       #ndtv {
-           width: 100%;
-       }
-
-
-       /* NEWS CARDS */
-
-       main>span:nth-of-type(3),
-       main>span:nth-of-type(4),
-       main>span:nth-of-type(5) {
-           width: 100%;
-           margin-right: 0;
+       footer>span:first-of-type {
+           display: flex;
+           align-items: center;
+           gap: 14px;
            margin-bottom: 20px;
+       }
+
+       footer>span:last-of-type {
+           display: inline-flex;
+           margin-left: 0px;
+           flex-wrap: wrap;
+           align-items: center;
+           gap: 10px;
+           padding-top: 20px;
+           padding-right: 0px;
+           border-top: 1px solid #444;
+       }
+
+       footer h1 {
+           font-size: 25px;
+           letter-spacing: 1px;
+           margin-bottom: 20px;
+       }
+
+       footer h3 {
+           font-size: 13px;
+           font-weight: 300;
+           color: #ddd;
+           margin-bottom: 15px;
+       }
+
+       footer>p {
+           position: static;
+           width: 100%;
+           text-align: center;
+           margin-top: 20px;
+           color: #888;
+           font-size: 10px;
+
        }
 
        main>span:nth-of-type(3) img,
        main>span:nth-of-type(4) img,
        main>span:nth-of-type(5) img {
+           width: 100%;
            height: auto;
+           object-fit: cover;
+           display: block;
+           transition: 0.4s;
        }
 
-
-       /* FOOTER */
-
-       footer {
-           padding: 35px 25px 25px;
-       }
-
-       footer h1 {
-           font-size: 30px;
-       }
-
-       footer>span:last-of-type {
-           gap: 14px;
-           padding-right: 0;
-       }
-
-       footer>p {
-           position: static;
-           margin-top: 20px;
-           white-space: normal;
-       }
-   }
-
-   /* .forum {
-       width: 400px;
-       height: 400px;
-       margin: 5px;
-       padding: 20px;
-       border: 1px solid black;
-
-   }
-
-   label {
-       display: flex;
-       justify-content: flex-start;
-       align-items: center;
-   }
-
-   #sub {
-       display: block;
-   }
-
-   textarea {
-       resize: none;
-       height: auto;
-       width: 100%;
-   } */
-   * {
-       padding: 4px;
-       margin: 4px;
-   }
-
-   .forum {
-       /* width: 300px;
-       height: 310px;
-       border: 1px solid #333;
-       margin: 5px;
-       border-radius: 7px;
-       padding: 10px 10px 10px 10px;
-       background: white;
-       font-size: 12px; */
-       width: 400px;
-       height: 350px;
-       padding: 20px;
-       border: 1px solid black;
-   }
-
-   .head {
-    text-align: center;
-    text-decoration: underline;
-   }
-
-   .forum label {
-       display: inline-block;
-       margin: 1px;
-       align-items: normal;
-       width: 80px;
-       margin-bottom: 15px;
-   }
-
-   .forum input,
-   textarea {
-       resize: none;
-       width: 70%;
-   }
-
-   #sub {
-       display: block;
-       justify-content: flex-start;
-       
    }
